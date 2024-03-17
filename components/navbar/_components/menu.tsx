@@ -1,10 +1,11 @@
-"use client"
 
-import * as React from "react"
-import Link from "next/link"
+"use client";
 
-import { cn } from "@/lib/utils"
- 
+import * as React from "react";
+import Link from "next/link";
+
+import { cn } from "@/lib/utils";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,7 +14,14 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
+
+import {
+  PiBookOpenTextLight,
+  PiFileThin,
+  PiSparkleLight,
+  PiTargetLight,
+} from "react-icons/pi";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -51,47 +59,126 @@ const components: { title: string; href: string; description: string }[] = [
     description:
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
-]
+];
 
 export function Menu() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden lg:flex">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Product</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
-                    </div>
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components built with Radix UI and
-                      Tailwind CSS.
+            <div className="flex">
+              <ul className="grid  p-2 md:w-[400px]  lg:w-[250px] hover:cursor-pointer border-r">
+                <div className="flex items-center gap-1 hover:bg-gray-400/10 p-1 rounded-sm">
+                  <PiBookOpenTextLight className="text-2xl mr-2 text-red-600" />
+                  <div className="">
+                    <a>Wikis</a>
+                    <p className="text-gray-400 text-sm font-light">
+                      Centralize your knowledge
                     </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1 hover:bg-gray-400/10 p-1 rounded-sm">
+                  <PiTargetLight className="text-2xl mr-2 text-blue-600" />
+                  <div className="">
+                    <a>Projects</a>
+                    <p className="text-gray-400 text-sm font-light">
+                      For every team or size
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1 hover:bg-gray-400/10 p-1 rounded-sm">
+                  <PiFileThin className="text-2xl mr-2 text-yellow-600" />
+                  <div className="">
+                    <a>Docs</a>
+                    <p className="text-gray-400 text-sm font-light">
+                      Simple & Powerful
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1 hover:bg-gray-400/10 p-1 rounded-sm">
+                  <PiSparkleLight className="text-2xl mr-2 text-purple-600" />
+                  <div className="">
+                    <a>Bird Assistant</a>
+                    <p className="text-gray-400 text-sm font-light">
+                      Integrated AI Assistant
+                    </p>
+                  </div>
+                </div>
+              </ul>
+              <div>
+                <ul className="grid  p-2 md:w-[400px]  lg:w-[250px] hover:cursor-pointer border-r">
+                  <div className="flex items-center gap-1 hover:bg-gray-400/10 p-1 rounded-sm">
+                    <div>
+                      <a className="">Template gallery</a>
+                      <p className="text-gray-400 text-sm font-light">
+                        Setups to get you started
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-1 hover:bg-gray-400/10 p-1 rounded-sm">
+                    <div>
+                      <a>Customer Stories</a>
+                      <p className="text-gray-400 text-sm font-light">
+                        See how teams use bird
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-1 hover:bg-gray-400/10 p-1 rounded-sm">
+                    <div>
+                      <a>Connections</a>
+                      <p className="text-gray-400 text-sm font-light">
+                        Connect your tools to bird
+                      </p>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Download</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {components.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {components.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
@@ -107,15 +194,15 @@ export function Menu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="/pricing" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
+              Pricing
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  )
+  );
 }
 
 const ListItem = React.forwardRef<
@@ -140,6 +227,6 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";

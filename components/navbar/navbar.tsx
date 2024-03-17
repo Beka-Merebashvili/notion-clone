@@ -3,7 +3,7 @@ import { Menu } from "./_components/menu";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="flex items-center">
       <Logo />
       <Menu />
     </div>
