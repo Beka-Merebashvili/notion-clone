@@ -55,20 +55,19 @@ type Tab = {
   image?: string;
 };
 
-
 const FourthSection = () => {
-    const ref = useRef(null);
-    const [activeTab, setActiveTab] = useState<Tab>(tabs[0]);
-  
-    const [activeImageIndex, setActiveImageIndex] = useState(0);
-  
-    const handleTabClick = (index: any) => {
-      setActiveTab(index);
-      setActiveImageIndex(0); 
-    };
+  const ref = useRef(null);
+  const [activeTab, setActiveTab] = useState<Tab>(tabs[0]);
 
-    return (
-        <>
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  const handleTabClick = (index: any) => {
+    setActiveTab(index);
+    setActiveImageIndex(0);
+  };
+
+  return (
+    <>
       <div className="flex flex-col  pt-20 xl:py-32 items-center justify-center">
         <div className="text-3xl xl:text-5xl font-medium justify-center items-center flex">
           Powerful building blocks
@@ -85,8 +84,8 @@ const FourthSection = () => {
             >
               <div className="flex flex-col ">
                 {tab.icon}
-                <div className="text-lg font-medium mt-2">{tab.header}</div>
-                <div className=" mt-2 ">{tab.subheading}</div>
+                <div className="text-lg font-medium mt-2 ">{tab.header}</div>
+                <div className=" mt-2  ">{tab.subheading}</div>
               </div>
               <>
                 {index === 0 && tab.images && (
@@ -96,13 +95,8 @@ const FourthSection = () => {
                       alt={`${tab.images[activeImageIndex].title} Image`}
                       width={500}
                       height={500}
-                      className="
-             flex justify-center my-10 xl:my-16 rounded-xl
-             mx-auto
-
-                   "
+                      className="flex justify-center my-10 xl:my-16 rounded-xl  mx-auto "
                     />
-
                     <div className="grid grid-cols-5 lg:grid-cols-5 xl:grid-cols-6 xl:w-1/2 mx-auto gap-1 xl:space-x-2">
                       {tab.images.map((image, index) => (
                         <div
@@ -110,15 +104,13 @@ const FourthSection = () => {
                           onClick={() => setActiveImageIndex(index)}
                           className={`${
                             index === activeImageIndex
-                              ?  "rounded-md bg-[#dbd9d9] items-center justify-center flex p-1 "
+                              ? "rounded-md bg-[#dbd9d9] items-center justify-center flex p-1 "
                               : "  rounded-md p-1 items-center justify-center bg-[#f6f5f4] hover:bg-[#eae7e7] "
                           }  `}
                         >
                           <div className=" text-sm items-center justify-center flex">
                             {image.title}
-
-                            </div>
-                     
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -153,25 +145,23 @@ const FourthSection = () => {
           as you need it to be.&quot;
         </div>
 
+        <div className="items-center flex justify-center flex-col">
+          <Image
+            src="/logos/logoipsum-327.svg"
+            alt="Canva logo"
+            width={1000}
+            height={1000}
+            className="pt-2 xl:pt-0  w-10 xl:w-14 "
+          />
 
-          <div className="items-center flex justify-center flex-col">
-            <Image
-              src="/logos/logoipsum-327.svg"
-              alt="Canva logo"
-              width={1000}
-              height={1000}
-              className="pt-2 xl:pt-0  w-10 xl:w-14 "
-            />
-       
           <div className="m text-center">
             <div className="text-sm  font-medium pt-4">Carlos Hernandez</div>
             <div className="text-sm">Marketing Director, Palium Software</div>
           </div>
-          </div>
         </div>
-     
+      </div>
     </>
-    )
-}
+  );
+};
 
-export default FourthSection
+export default FourthSection;
