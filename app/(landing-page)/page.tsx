@@ -4,6 +4,7 @@ import SecondSection from "./second-section";
 import ThirdSection from "./third-section";
 import FourthSection from "./fourth-section";
 import FifthSection from "./fifth-section";
+import SixSection from "./sixth-section";
 
 const LeangingPage = () => {
   return (
@@ -14,6 +15,7 @@ const LeangingPage = () => {
       <ThirdSection />
       <FourthSection />
       <FifthSection />
+      <SixSection />
     </div>
   );
 };
