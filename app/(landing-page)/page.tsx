@@ -7,6 +7,7 @@ import FifthSection from "./fifth-section";
 import SixSection from "./sixth-section";
 import SeventhSection from "./seventh-section";
 import GetStartedFree from "./eight-section";
+import Footer from "./footer";
 
 const LeangingPage = () => {
   return (
@@ -20,6 +21,7 @@ const LeangingPage = () => {
       <SixSection />
       <SeventhSection />
       <GetStartedFree />
+      <Footer />
     </div>
   );
 };
