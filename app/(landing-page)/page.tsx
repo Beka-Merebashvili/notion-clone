@@ -7,7 +7,7 @@ import FifthSection from "./fifth-section";
 import SixSection from "./sixth-section";
 import SeventhSection from "./seventh-section";
 import GetStartedFree from "./eight-section";
-import Footer from "./footer";
+import Footer from "../../components/footer";
 
 const LeangingPage = () => {
   return (
