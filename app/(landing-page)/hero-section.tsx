@@ -157,39 +157,20 @@ const HeroSection = () => {
               width={1025}
               height={500}
               alt="logo"
-              className="
-                w-full
-             border
-             p-20
-             xl:p-40
-             rounded-xl
-          
-             
-                "
+              className="  w-full border p-20 xl:p-40 rounded-xl"
             />
           </div>
         )}
       </div>
           </div>
 
-  
-           
 
         ) : (
           <div className="flex  xl:space-x-4 items-center justify-between hover:cursor-pointer gap-4 w-4/5 xl:w-3/4 2xl:w-[55%]">
             {tabs.map((tab) => (
               <motion.div
                 key={tab.name}
-                className={`
-                xl:flex 
-                justify-center 
-                space-x-4
-                xl:pt-4
-                sm:my-10
-               
-                xl:my-0
-                w-60
-                h-36
+                className={` xl:flex justify-center space-x-4 xl:pt-4sm:my-10xl:my-0 w-60h-36
                 ${
                   activeTab === tab
                     ? "border rounded-xl pt-2 bg-white "
@@ -242,7 +223,7 @@ const HeroSection = () => {
         )}
 
         {/* Display content based on the active tab */}
-        <div className="hidden md:flex py-10 px-8 md:px-0    lg:w-3/4 2xl:w-[55%]">
+        <div className="hidden md:flex py-10 px-8 md:px-0   lg:w-3/4 2xl:w-[55%]">
           {activeTab && (
             <div className=" md:flex  items-center justify-center space-x-6 hover:cursor-pointer w-full">
               <Image
@@ -250,14 +231,7 @@ const HeroSection = () => {
                 width={500}
                 height={500}
                 alt="logo"
-                className="
-                w-full
-                p-20
-                xl:p-40
-                shadow-md
-                rounded-xl
-                bg-[#f6f5f4]
-        "
+                className=" w-full p-20 xl:p-40 shadow-md rounded-xl bg-[#f6f5f4] "
               />
             </div>
           )}
