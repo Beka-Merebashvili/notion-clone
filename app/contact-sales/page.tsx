@@ -1,5 +1,5 @@
 import Navbar from "@/components/navbar/navbar";
-import ContactForm from "./_components/contact-form";
+import ContactForm from "./contact-form";
  
 
 const Contact = () => {
