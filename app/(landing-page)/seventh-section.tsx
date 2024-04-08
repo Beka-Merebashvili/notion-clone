@@ -19,7 +19,7 @@ const items = [
         Get template <PiArrowRight className="ml-3 text-sm " />
       </div>
     ),
-    image: "/images/company-wiki-template.webp",
+    image: "/assets/company-wiki-template.webp",
   },
   {
     icon: <PiFlagCheckeredFill className="text-2xl text-sky-600" />,
