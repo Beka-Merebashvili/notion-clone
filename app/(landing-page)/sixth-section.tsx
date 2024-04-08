@@ -3,10 +3,8 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-
 import { TbSwitch3 } from "react-icons/tb";
-import {  PiArrowRight } from "react-icons/pi";
-
+import { PiArrowRight } from "react-icons/pi";
 
 const tabs = [
   {

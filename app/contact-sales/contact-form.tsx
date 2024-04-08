@@ -42,11 +42,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { PiCheckLight } from "react-icons/pi";
 
 const FormSchema = z.object({
-  first_name: z.string(),
-  last_name: z.string(),
+  first_name: z.string().nonempty(),
+  last_name: z.string().nonempty(),
   email: z.string().email(),
   job_title: z.string(),
-  company_name: z.string(),
+  company_name: z.string().nonempty(),
   help: z.enum([
     "Evaluate Bird for my company",
     "Learn More",
@@ -137,13 +137,7 @@ export default function ContactForm() {
     >
       <div>
         <div className="text-5xl font-medium w-2/3">Contact our sales team</div>
-        <div
-          className="
-              
-              py-4
-              text-gray-500
-                    "
-        >
+        <div className="py-4 text-gray-500">
           Let&apos;s talk about how Bird can help your team work better.
         </div>
 
@@ -181,9 +175,7 @@ export default function ContactForm() {
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             className="
-            space-y-4
-                     
-                        "
+            space-y-4 "
           >
             <div className="md:flex items-center gap-6 ">
               <FormField
@@ -331,11 +323,7 @@ export default function ContactForm() {
             <div className="flex items-center gap-4">
               <Button
                 type="submit"
-                className="
-                            text-sm
-                            font-light
-                        
-                            "
+                className="text-sm font-light"
                 disabled={loading}
                 onClick={() => form.handleSubmit(onSubmit)}
               >
@@ -345,21 +333,7 @@ export default function ContactForm() {
           </form>
         ) : (
           <>
-            <div
-              className="
-        text-xl 
-        md:text-2xl 
-        flex 
-        items-center
-        justify-center
-        flex-col
-        
-
- 
-        px-8
-
-        "
-            >
+            <div className=" text-xl md:text-2xl flex items-center justify-center flex-colpx-8">
               <div className="w-80">
                 <Image
                   src="/assets/MeditatingDoodle.svg"
