@@ -42,9 +42,7 @@ const DropdownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
     <div className="w-screen h-screen bg-white  px-4 items-center justify-center absolute  right-0 xl:hidden">
       <Accordion
         defaultValue="item-1"
-        className="
-            pl-2
-            "
+        className="pl-2"
         type="single"
         collapsible
       >
@@ -328,26 +326,14 @@ const DropdownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
 
         <Link
           href={"/pricing"}
-          className="
-            flex
-            flex-1
-            items-center 
-            justify-between
-            py-  
-            border-b"
+          className="flex flex-1 items-center justify-between py-4 border-b"
         >
           Pricing
         </Link>
 
         <Link
-          href={"/contact"}
-          className="
-            flex
-            flex-1
-            items-center 
-            justify-between
-            border-b
-            py-4 "
+          href={"/contact-sales"}
+          className="flex flex-1 items-center  justify-between border-b py-4 "
         >
           Request a demo
         </Link>
@@ -356,12 +342,7 @@ const DropdownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
       <div className="pt-12">
         <div className="  space-y-4 flex flex-col px-4">
           <Link href={"/sign-in"}>
-            <Button
-              className="
-              w-full"
-            >
-              Get bird free
-            </Button>
+            <Button className="w-full">Get bird free</Button>
           </Link>
 
           <Link href={"/sign-in"}>
